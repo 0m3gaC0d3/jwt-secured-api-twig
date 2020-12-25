@@ -1,0 +1,66 @@
+{
+    "name": "omegacode/jwt-secured-api-twig",
+    "description": "This package integrates the template engine twig into the api frame work.",
+    "homepage": "https://github.com/0m3gaC0d3/jwt-secured-api-twig",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wolf Utz",
+            "email": "wpu@hotmail.de"
+        }
+    ],
+    "require": {
+        "omegacode/jwt-secured-api-core": "dev-master",
+        "twig/twig": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "squizlabs/php_codesniffer": "^3.5",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "0.12.*",
+        "phpmd/phpmd": "^2.8",
+        "guzzlehttp/guzzle": "^6.5",
+        "symfony/var-dumper": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmegaCode\\JwtSecuredApiTwig\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OmegaCode\\JwtSecuredApiTwig\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "process-timeout": 0
+    },
+    "scripts": {
+        "unit": [
+            "./.ci/scripts/ciRunner.sh -s unit"
+        ],
+        "e2e": [
+            "./.ci/scripts/ciRunner.sh -s e2e -p 7.4"
+        ],
+        "lint": [
+            "./.ci/scripts/ciRunner.sh -s lint -p 7.4"
+        ],
+        "fix": [
+            "./.ci/scripts/ciRunner.sh -s fix -p 7.4"
+        ],
+        "build": [
+            "./.ci/scripts/ciRunner.sh -s build -p 7.4"
+        ],
+        "quality": [
+            "./.ci/scripts/ciRunner.sh -s quality -p 7.4"
+        ]
+    },
+    "extra": {
+        "jwt-secured-api": {
+            "conf-dir": "config"
+        }
+    }
+}

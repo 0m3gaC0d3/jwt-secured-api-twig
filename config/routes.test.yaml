@@ -1,0 +1,8 @@
+routes:
+  -
+    name: index
+    route: /
+    methods: [ get,post ]
+    action: OmegaCode\JwtSecuredApiTwig\Action\Test\IndexAction
+    middlewares:
+      - OmegaCode\JwtSecuredApiCore\Middleware\CacheableHTMLMiddleware
