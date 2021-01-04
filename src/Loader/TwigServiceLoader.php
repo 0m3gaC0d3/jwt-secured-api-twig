@@ -36,8 +36,10 @@ use Twig\Loader\FilesystemLoader;
 
 class TwigServiceLoader
 {
+    /** @psalm-suppress UndefinedConstant */
     protected const CACHE_DIRECTORY = APP_ROOT_PATH . '/var/cache/twig';
 
+    /** @psalm-suppress UndefinedConstant */
     protected const DEFAULT_TEMPLATE_DIRECTORY = APP_ROOT_PATH . '/res/templates';
 
     public function load(ContainerInterface $container, EventDispatcher $eventDispatcher): void
