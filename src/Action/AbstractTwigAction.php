@@ -48,7 +48,7 @@ abstract class AbstractTwigAction extends AbstractAction
     public function render(Response $response, array $variables = []): Response
     {
         $content = $this->view->render($variables);
-        $response->getBody()->write((string) $content);
+        $response->getBody()->write($content);
 
         return $response;
     }
@@ -57,6 +57,6 @@ abstract class AbstractTwigAction extends AbstractAction
 
     private function loadTemplate(): void
     {
-        $this->view = $this->environment->load($this::getTemplateFilePath());
+        $this->view = $this->environment->load($this->getTemplateFilePath());
     }
 }
